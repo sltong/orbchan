@@ -1,0 +1,12 @@
+<aside class="w-96 h-screen flex flex-col p-6 bg-violet-100">
+  <span class="text-lg font-semibold mb-2">Boards</span>
+  <ol>
+    {% for board in boards %}
+    <li>
+      <a href="{% url 'boards:board_detail' board.slug %}">
+        {{ board }}
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</aside>

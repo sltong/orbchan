@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="w-full h-screen bg-violet-100 flex flex-col justify-center items-center">
+  <span>Orbchan</span>
+  <div class="w-4/5 p-6 bg-violet-50">
+    <span class="text-lg font-semibold">Boards</span>
+    {% for board in boards %}
+    {{ board }}
+    {% endfor %}
+  </div>
+  <span>Stats</span>
+</div>
+{% endblock %}

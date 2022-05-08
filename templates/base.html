@@ -1,0 +1,13 @@
+{% load static %}
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="{% static 'vendor/htmx.min.js' %}" defer></script>
+    {% tailwind_css %}
+  </head>
+  <body>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

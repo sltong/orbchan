@@ -1,0 +1,5 @@
+#+title: Orbchan
+#+subtitle: An imageboard software application with orbs.
+
+Orbchan is an imageboard software application inspired by the Futaba Channel and
+2channel.
