@@ -1,0 +1,10 @@
+django
+django-extensions
+django-htmx
+django-model-utils
+django-tailwind
+django-treebeard
+easy-thumbnails
+hiredis
+psycopg2-binary
+redis
