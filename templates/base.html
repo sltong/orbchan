@@ -1,13 +1,29 @@
-{% load static %}
-{% load tailwind_tags %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <script src="{% static 'vendor/htmx.min.js' %}" defer></script>
+    <title>Orbchan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% tailwind_css %}
   </head>
-  <body>
-    {% block body %}
-    {% endblock %}
+
+  <body class="bg-zinc-900 text-zinc-50 leading-normal tracking-normal">
+    <nav class="board-list px-1">
+      <ol class="flex gap-x-2">
+        {% for board in boards %}
+        <li>
+          <a href="{{ board.get_absolute_url }}">({{ board.abbreviation }})</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </nav>
+    <div class="grid p-4 md:grid-cols-12 md:p-0">
+      <main class="container md:col-start-4 md:col-end-10 md:max-w-5xl mx-auto">
+        {% block main %}
+        {% endblock %}
+      </main>
+    </div>
   </body>
 </html>

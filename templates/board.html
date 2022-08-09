@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="text-6xl mb-6">{{ board }}</h1>
+{% include 'create_thread_form.html' %}
+{% for thread in threads %}
+<article class="container border-2 border-zinc-700 rounded-3xl p-4 my-4">
+  {% include 'snippets/post.html' with post=thread.posts.first %}
+  {% for post in thread.posts.replies %}
+  {% include 'snippets/post.html' %}
+  {% endfor %}
+</article>
+{% endfor %}
+{% endblock %}
